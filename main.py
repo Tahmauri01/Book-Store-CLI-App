@@ -28,6 +28,13 @@ def main():
                 else:
                     print("Book cannot be found.")
 
+        #displays all book
+        elif choice == 3:
+            x = 1
+            for book in bookList:
+                print(f"{x}) {" | ".join(book[:2])} | {book[2]} pages")
+                x += 1
+
 
 if __name__ == "__main__":
     main()
