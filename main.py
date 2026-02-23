@@ -7,8 +7,8 @@ def main():
 
     #keeps running until user quits
     while choice != 4:
-        print("*** Book Manager *** \n1) Add a book\n2) Lookup a book\n3) Display all books\n4) Quit")
-        choice = int(input())
+        print("\n*** Book Manager *** \n1) Add a book\n2) Lookup a book\n3) Display all books\n4) Quit")
+        choice = int(input("\n"))
 
         #adds book
         if choice == 1:
@@ -24,7 +24,7 @@ def main():
             keyword = input("Enter Search Term: ")
             for book in bookList:
                 if keyword in book:
-                    print(book)
+                    print(f"{" | ".join(book[:2])} | {book[2]} pages")
                 else:
                     print("Book cannot be found.")
 
@@ -34,7 +34,15 @@ def main():
             for book in bookList:
                 print(f"{x}) {" | ".join(book[:2])} | {book[2]} pages")
                 x += 1
-
+        
+        #ends program
+        elif choice == 4:
+            print("Quitting...")
+        
+        
+        else:
+            print("\nEnter a valid choice.")
+    print("Ended")
 
 if __name__ == "__main__":
     main()
