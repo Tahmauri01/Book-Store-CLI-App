@@ -12,11 +12,17 @@ def main():
 
         #adds book
         if choice == 1:
-            print("Adding book...")
-            nBook = input("Enter Book Name: ")
-            nAuthor = input("Enter Author Name:")
-            nPages = input("Enter Number of Pages:")
-            bookList.append([nBook, nAuthor, nPages])
+            repeat = True
+            #checks if more books wants to be added
+            while repeat == True:
+                print("Adding book...")
+                nBook = input("Enter Book Name: ")
+                nAuthor = input("Enter Author Name:")
+                nPages = input("Enter Number of Pages:")
+                bookList.append([nBook, nAuthor, nPages])
+                ans = input("Would you like to add another? (y/n) ")
+                if "n" in ans.lower():
+                    repeat = False
         
         #looks for book
         elif choice == 2:
@@ -39,7 +45,7 @@ def main():
         elif choice == 4:
             print("Quitting...")
         
-        
+
         else:
             print("\nEnter a valid choice.")
     print("Ended")
